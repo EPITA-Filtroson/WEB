@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notre Équipe - Filtroson</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<canvas id="equalizerCanvas"></canvas>
+
+<! -- Egaliseur -->
+<script>
+  const canvas = document.getElementById("equalizerCanvas");
+  const ctx = canvas.getContext("2d");
+
+  canvas.width = window.innerWidth;
+  canvas.height = 50;
+
+  function drawEqualizer() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    let bars = 50; // Nombre de barres
+    let barWidth = canvas.width / bars;
+
+    for (let i = 0; i < bars; i++) {
+      let barHeight = Math.random() * 40;
+      let x = i * barWidth;
+      let y = 50 - barHeight;
+
+      ctx.fillStyle = `hsl(${Math.random() * 360}, 100%, 50%)`; // Couleurs dynamiques
+      ctx.fillRect(x, y, barWidth - 2, barHeight);
+    }
+
+    setTimeout(drawEqualizer, 75);
+  }
+
+  drawEqualizer();
+</script>
+<body>
+<header>
+  <h1>Notre Équipe</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="#Download">Téléchargement</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<! -- Carré Equipe -->
+<section id="team">
+  <h2>Rencontrez notre équipe</h2>
+  <div class="team-container">
+    <div class="team-member" onclick="openModal('roman')">
+      <h3>Roman Bouyon</h3>
+      <p>Chef de projet</p>
+    </div>
+    <div class="team-member" onclick="openModal('jaisy')">
+      <h3>Jaisy Brahimi</h3>
+      <p>Développeur</p>
+    </div>
+    <div class="team-member" onclick="openModal('mathias')">
+      <h3>Mathias Gaillard</h3>
+      <p>Développeur</p>
+    </div>
+    <div class="team-member" onclick="openModal('rayan')">
+      <h3>Rayan Hamani</h3>
+      <p>Développeur</p>
+    </div>
+    <div class="team-member" onclick="openModal('youssef')">
+      <h3>Youssef Menessy</h3>
+      <p>Développeur</p>
+    </div>
+  </div>
+</section>
+
+<! -- Fenêtre équipe -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h2 id="modal-title"></h2>
+    <p id="modal-text"></p>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 Filtroson - Tous droits réservés</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

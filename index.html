@@ -1,1 +1,73 @@
-<h1>Hello!<\h1>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtroson - Accueil</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<canvas id="equalizerCanvas"></canvas>
+
+<! -- Egaliseur -->
+<script>
+    const canvas = document.getElementById("equalizerCanvas");
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = window.innerWidth;
+    canvas.height = 50;
+
+    function drawEqualizer() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        let bars = 50;
+        let barWidth = canvas.width / bars;
+
+        for (let i = 0; i < bars; i++) {
+            let barHeight = Math.random() * 40;
+            let x = i * barWidth;
+            let y = 50 - barHeight;
+
+            ctx.fillStyle = `hsl(${Math.random() * 360}, 100%, 50%)`;
+            ctx.fillRect(x, y, barWidth - 2, barHeight);
+        }
+
+        setTimeout(drawEqualizer, 75);
+    }
+
+    drawEqualizer();
+</script>
+
+<body>
+<! -- Titre -->
+<header>
+    <h1>Filtroson</h1>
+    <nav>
+        <ul>
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#download">Téléchargement</a></li>
+            <li><a href="team.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<! -- Contenu Page -->
+<section id="about">
+    <h2>À propos du projet</h2>
+    <p>Filtroson est un logiciel de traitement audio</p>
+</section>
+
+
+
+<section id="download">
+    <h2>Télécharger</h2>
+    <button onclick="downloadSoftware()">Télécharger Filtroson</button>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Contactez-nous à : <a href="mailto:roman.bouyon@epita.com">epita.filtroson@outlook.com</a></p>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
