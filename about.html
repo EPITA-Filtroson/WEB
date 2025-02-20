@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FilFiltroson est un logiciel de traitement audiotroson - Accueil</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<canvas id="equalizerCanvas"></canvas>
+
+<! -- Egaliseur -->
+<script>
+    const canvas = document.getElementById("equalizerCanvas");
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = window.innerWidth;
+    canvas.height = 50;
+
+    function drawEqualizer() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        let bars = 50;
+        let barWidth = canvas.width / bars;
+
+        for (let i = 0; i < bars; i++) {
+            let barHeight = Math.random() * 40;
+            let x = i * barWidth;
+            let y = 50 - barHeight;
+
+            ctx.fillStyle = `hsl(${Math.random() * 360}, 100%, 50%)`;
+            ctx.fillRect(x, y, barWidth - 2, barHeight);
+        }
+
+        setTimeout(drawEqualizer, 75);
+    }
+
+    drawEqualizer();
+</script>
+
+<body>
+<! -- Titre -->
+<header>
+    <h1>Filtroson</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="#download">Téléchargement</a></li>
+            <li><a href="team.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+! -- Contenu Page -->
+<section id="about">
+    <h1>Filtroson – L'innovation au service du traitement audio</h1>
+    <ul style="list-style-position: inside; padding-left: 0;"> Dans un monde où la qualité sonore joue un rôle essentiel dans de nombreux domaines – musique, communication, audiovisuel – l'amélioration des enregistrements audio est un enjeu majeur. C'est dans cette optique que nous avons créé Filtroson, un logiciel innovant dédié au filtrage numérique des signaux audio.
+
+        <h2>Notre objectif</h2>
+        L'ambition de Filtroson est de fournir une solution performante et efficace pour traiter les fichiers audio en appliquant différents types de filtres numériques. Notre logiciel permettra notamment de :<br>
+        <br>
+        Réduire le bruit indésirable dans les enregistrements, améliorant ainsi la clarté sonore.
+        Égaliser le son en ajustant différentes fréquences pour optimiser la qualité audio.
+        Appliquer divers filtres numériques, comme des filtres passe-bas, passe-haut ou passe-bande, selon les besoins spécifiques des utilisateurs.
+        Convertir des signaux analogiques en numériques, garantissant une restitution fidèle du son d'origine.
+        Technologie et développement
+        Filtroson est développé en Rust, un langage connu pour ses performances optimales et sa gestion efficace des ressources. Ce choix technique nous permet d’assurer un traitement rapide et précis des fichiers audio tout en garantissant la stabilité du logiciel.
+
+        <h2>Une équipe dédiée</h2><br>
+        Notre projet est porté par une équipe de cinq passionnés :
+            <li>Roman Bouyon (Chef de projet)</li>
+            <li>Jaisy Brahimi</li>
+            <li>Mathias Gaillard</li>
+            <li>Rayan Hamani</li>
+            <li>Youssef Menessy</li>
+        Chacun apporte ses compétences et son expertise pour faire de Filtroson un outil puissant et accessible à tous.
+
+        Avec Filtroson, nous visons à repousser les limites du traitement audio et à offrir une solution de qualité aux amateurs et professionnels du son.
+
+        Restez à l'écoute, Filtroson arrive bientôt !</ul>
+</section>
