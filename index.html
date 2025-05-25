@@ -3,42 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FilFiltroson est un logiciel de traitement audiotroson - Accueil</title>
+    <title>Filtroson - Accueil</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <canvas id="equalizerCanvas"></canvas>
 
-<! -- Egaliseur -->
 <script>
     const canvas = document.getElementById("equalizerCanvas");
     const ctx = canvas.getContext("2d");
-
     canvas.width = window.innerWidth;
     canvas.height = 50;
 
     function drawEqualizer() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-
         let bars = 50;
         let barWidth = canvas.width / bars;
-
         for (let i = 0; i < bars; i++) {
             let barHeight = Math.random() * 40;
             let x = i * barWidth;
             let y = 50 - barHeight;
-
             ctx.fillStyle = `hsl(${Math.random() * 360}, 100%, 50%)`;
             ctx.fillRect(x, y, barWidth - 2, barHeight);
         }
-
         setTimeout(drawEqualizer, 75);
     }
-
     drawEqualizer();
 </script>
 
 <body>
-<! -- Titre -->
 <header>
     <h1>Filtroson</h1>
     <nav>
@@ -50,18 +42,22 @@
     </nav>
 </header>
 
-<! -- Contenu Page -->
 <section id="about">
     <h2>À propos du projet</h2>
-    <p>
-        Le projet Filtroson est une application dédiée au traitement du signal audio grâce à l’utilisation de filtres numériques. Son objectif est de permettre la modification et la transformation des sons en appliquant divers effets, allant de l’atténuation des fréquences à des transformations plus complexes.
-
-        Filtroson offre une interface intuitive qui facilite l’expérimentation avec ces filtres, permettant aux utilisateurs d’explorer facilement les différentes possibilités offertes par le traitement numérique du son. Conçue avec des technologies modernes telles que Rust pour la performance et la fiabilité, ainsi qu’une interface graphique ergonomique, l’application garantit une manipulation fluide et réactive des signaux audio.
-
-        Parmi ses fonctionnalités, Filtroson propose une large gamme de filtres audio numériques (distorsion, modulation, delay, etc.), des options de réglage précises, ainsi qu’une visualisation en temps réel des effets appliqués. Cela permet aux utilisateurs de personnaliser finement le son selon leurs besoins, que ce soit pour la création musicale, la post-production ou l’expérimentation sonore.
-
-        Cette solution vise à être un outil à la fois pédagogique et pratique, adapté aussi bien aux passionnés d’audio qu’aux professionnels souhaitant manipuler et enrichir leurs sons avec précision et créativité.
-    </p>
+    <div class="text-block">
+        <p>
+            Le projet Filtroson est une application dédiée au traitement du signal audio grâce à l’utilisation de filtres numériques. Son objectif est de permettre la modification et la transformation des sons en appliquant divers effets, allant de l’atténuation des fréquences à des transformations plus complexes.
+        </p>
+        <p>
+            Filtroson offre une interface intuitive qui facilite l’expérimentation avec ces filtres, permettant aux utilisateurs d’explorer facilement les différentes possibilités offertes par le traitement numérique du son. Conçue avec des technologies modernes telles que Rust pour la performance et la fiabilité, ainsi qu’une interface graphique ergonomique, l’application garantit une manipulation fluide et réactive des signaux audio.
+        </p>
+        <p>
+            Parmi ses fonctionnalités, Filtroson propose une large gamme de filtres audio numériques (distorsion, modulation, delay, etc.), des options de réglage précises, ainsi qu’une visualisation en temps réel des effets appliqués. Cela permet aux utilisateurs de personnaliser finement le son selon leurs besoins, que ce soit pour la création musicale, la post-production ou l’expérimentation sonore.
+        </p>
+        <p>
+            Cette solution vise à être un outil à la fois pédagogique et pratique, adapté aussi bien aux passionnés d’audio qu’aux professionnels souhaitant manipuler et enrichir leurs sons avec précision et créativité.
+        </p>
+    </div>
 </section>
 
 <section id="download">
@@ -71,7 +67,7 @@
 
 <section id="contact">
     <h2>Contact</h2>
-    <p>Contactez-nous à : <a href="mailto:roman.bouyon@epita.com">epita.filtroson@outlook.com</a></p>
+    <p>Contactez-nous à : <a href="mailto:epita.filtroson@outlook.com">epita.filtroson@outlook.com</a></p>
 </section>
 
 <script src="script.js"></script>

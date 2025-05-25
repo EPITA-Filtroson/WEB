@@ -3,42 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FilFiltroson est un logiciel de traitement audiotroson - Accueil</title>
+    <title>Filtroson - À propos</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <canvas id="equalizerCanvas"></canvas>
 
-<! -- Egaliseur -->
 <script>
     const canvas = document.getElementById("equalizerCanvas");
     const ctx = canvas.getContext("2d");
-
     canvas.width = window.innerWidth;
     canvas.height = 50;
 
     function drawEqualizer() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-
         let bars = 50;
         let barWidth = canvas.width / bars;
-
         for (let i = 0; i < bars; i++) {
             let barHeight = Math.random() * 40;
             let x = i * barWidth;
             let y = 50 - barHeight;
-
             ctx.fillStyle = `hsl(${Math.random() * 360}, 100%, 50%)`;
             ctx.fillRect(x, y, barWidth - 2, barHeight);
         }
-
         setTimeout(drawEqualizer, 75);
     }
-
     drawEqualizer();
 </script>
 
 <body>
-<! -- Titre -->
 <header>
     <h1>Filtroson</h1>
     <nav>
@@ -50,47 +42,45 @@
     </nav>
 </header>
 
-! -- Contenu Page -->
 <section id="about">
     <h2>Présentation du projet Filtroson</h2>
+    <div class="text-block">
+        <p><strong>Historique du projet :</strong> Filtroson est né d’une idée simple : améliorer la qualité sonore des enregistrements audio à l’aide de techniques de traitement numérique avancées. Le projet a vu le jour dans le cadre d’un travail collaboratif réalisé à l’EPITA, avec pour objectif de concevoir un logiciel puissant, rapide et accessible pour le traitement audio.</p>
 
-    <p><strong>Historique du projet :</strong> Filtroson est né d’une idée simple : améliorer la qualité sonore des enregistrements audio à l’aide de techniques de traitement numérique avancées. Le projet a vu le jour dans le cadre d’un travail collaboratif réalisé à l’EPITA, avec pour objectif de concevoir un logiciel puissant, rapide et accessible pour le traitement audio.</p>
+        <p><strong>Notre équipe :</strong></p>
+        <ul>
+            <li><strong>Roman Bouyon</strong> – Chef de projet et responsable du développement global</li>
+            <li><strong>Jaisy Brahimi</strong> – Spécialiste en traitement du signal et en algorithmes</li>
+            <li><strong>Mathias Gaillard</strong> – Développeur chargé de la structuration du code</li>
+            <li><strong>Rayan Hamani</strong> – Responsable de l’optimisation et de la performance</li>
+            <li><strong>Youssef Menessy</strong> – Expert en implémentation et intégration logicielle</li>
+        </ul>
 
-    <p><strong>Notre équipe :</strong> Le projet est porté par cinq membres aux profils complémentaires :
-    <ul>
-        <li><strong>Roman Bouyon</strong> – Chef de projet et responsable du développement global</li>
-        <li><strong>Jaisy Brahimi</strong> – Spécialiste en traitement du signal et en algorithmes</li>
-        <li><strong>Mathias Gaillard</strong> – Développeur chargé de la structuration du code</li>
-        <li><strong>Rayan Hamani</strong> – Responsable de l’optimisation et de la performance</li>
-        <li><strong>Youssef Menessy</strong> – Expert en implémentation et intégration logicielle</li>
-    </ul>
-    </p>
+        <p><strong>Chronologie de réalisation :</strong></p>
+        <ul>
+            <li><strong>Semaine 1–2 :</strong> Définition du cahier des charges et choix des outils</li>
+            <li><strong>Semaine 3–4 :</strong> Début du développement du noyau de traitement audio</li>
+            <li><strong>Semaine 5 :</strong> Intégration des filtres</li>
+            <li><strong>Semaine 6 :</strong> Création des éléments visuels</li>
+            <li><strong>Semaine 7 :</strong> Finalisation, tests, corrections et mise en ligne</li>
+        </ul>
 
-    <p><strong>Chronologie de réalisation :</strong>
-    <ul>
-        <li><strong>Semaine 1–2 :</strong> Définition du cahier des charges et choix des outils (langage Rust, interface web HTML/CSS/JS)</li>
-        <li><strong>Semaine 3–4 :</strong> Début du développement du noyau de traitement audio et de l’interface utilisateur</li>
-        <li><strong>Semaine 5 :</strong> Intégration des filtres (passe-bas, passe-haut, passe-bande)</li>
-        <li><strong>Semaine 6 :</strong> Création des éléments visuels (égaliseur, pages web)</li>
-        <li><strong>Semaine 7 :</strong> Finalisation, tests, corrections et mise en ligne</li>
-    </ul>
-    </p>
+        <p><strong>Problèmes rencontrés :</strong></p>
+        <ul>
+            <li>Optimisation des performances</li>
+            <li>Compatibilité multiplateforme</li>
+            <li>Application correcte des filtres numériques</li>
+        </ul>
 
-    <p><strong>Problèmes rencontrés :</strong> Nous avons dû faire face à plusieurs défis :
-    <ul>
-        <li>Optimisation des performances pour un traitement audio fluide</li>
-        <li>Compatibilité multiplateforme (fichiers audio et navigateurs)</li>
-        <li>Compréhension et application correcte des filtres numériques</li>
-    </ul>
-    </p>
+        <p><strong>Solutions envisagées :</strong></p>
+        <ul>
+            <li>Utilisation de Rust pour les performances</li>
+            <li>Architecture modulaire pour la maintenabilité</li>
+            <li>Travail d’équipe rigoureux</li>
+        </ul>
 
-    <p><strong>Solutions envisagées :</strong> Pour résoudre ces problèmes :
-    <ul>
-        <li>Nous avons choisi Rust, un langage performant, pour le traitement du signal</li>
-        <li>Nous avons utilisé une architecture modulaire pour rendre le code plus maintenable</li>
-        <li>Nous avons travaillé en équipe avec une organisation rigoureuse (répartition des tâches, réunions régulières)</li>
-    </ul>
-    </p>
-
-    <p><strong>Conclusion :</strong> Filtroson est le fruit d’un travail collectif ambitieux, mêlant passion pour l’audio, rigueur technique et innovation. Il s’adresse à tous ceux qui souhaitent améliorer la qualité de leurs fichiers audio, qu’ils soient amateurs ou professionnels.</p>
+        <p><strong>Conclusion :</strong> Filtroson est le fruit d’un travail collectif ambitieux, mêlant passion pour l’audio, rigueur technique et innovation. Il s’adresse à tous ceux qui souhaitent améliorer la qualité de leurs fichiers audio, qu’ils soient amateurs ou professionnels.</p>
+    </div>
 </section>
+</body>
+</html>
