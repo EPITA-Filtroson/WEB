@@ -6,38 +6,10 @@
   <title>Notre Équipe - Filtroson</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<canvas id="equalizerCanvas"></canvas>
 
-<! -- Egaliseur -->
-<script>
-  const canvas = document.getElementById("equalizerCanvas");
-  const ctx = canvas.getContext("2d");
-
-  canvas.width = window.innerWidth;
-  canvas.height = 50;
-
-  function drawEqualizer() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    let bars = 50; // Nombre de barres
-    let barWidth = canvas.width / bars;
-
-    for (let i = 0; i < bars; i++) {
-      let barHeight = Math.random() * 40;
-      let x = i * barWidth;
-      let y = 50 - barHeight;
-
-      ctx.fillStyle = `hsl(${Math.random() * 360}, 100%, 50%)`; // Couleurs dynamiques
-      ctx.fillRect(x, y, barWidth - 2, barHeight);
-    }
-
-    setTimeout(drawEqualizer, 75);
-  }
-
-  drawEqualizer();
-</script>
 <body>
 <header>
+  <canvas id="equalizerCanvas"></canvas>
   <h1>Notre Équipe</h1>
   <nav>
     <ul>
@@ -89,4 +61,27 @@
 </footer>
 <script src="script.js"></script>
 </body>
+
+<script>
+  const canvas = document.getElementById("equalizerCanvas");
+  const ctx = canvas.getContext("2d");
+  canvas.width = window.innerWidth;
+  canvas.height = 50;
+
+  function drawEqualizer() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    let bars = 40;
+    let barWidth = canvas.width / bars;
+    for (let i = 0; i < bars; i++) {
+      let barHeight = Math.random() * 80;
+      let x = i * barWidth;
+      let y = 70 - barHeight;
+      ctx.fillStyle = `hsl(${Math.random() * 360}, 100%, 50%)`;
+      ctx.fillRect(x, y, barWidth - 2, barHeight);
+    }
+    setTimeout(drawEqualizer, 50);
+  }
+  drawEqualizer();
+</script>
+
 </html>
